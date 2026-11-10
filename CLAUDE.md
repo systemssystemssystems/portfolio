@@ -34,7 +34,7 @@ This is a separate project from the art site (systemssystemssystems.faith). Do n
 
 ## Design
 
-One web font: Newsreader (serif) for headlines, section titles and the opening lines; the device's system sans for everything else. The opening is deliberately plain, set like the first lines of an article with no oversized slogan. The Work button says "Show more pieces" with no total, because the list may be incomplete and Jack does not want an exact count implied there. No monospace, no uppercase tracked labels, no decorative reference codes; these were removed on purpose to make the page plainer. Each row has one quiet metadata line (type, topic, edition, access). The outlet is left off rows when it is the most common one (Environment Analyst). Jack wants it to stay simple and not look corporate; keep changes restrained.
+One typeface throughout: the device's system sans, with no web fonts loaded. Headlines differ by weight and size only. White background, light mode only (no dark theme), at Jack's request. The opening is deliberately plain, a bold line and a paragraph with no oversized slogan. The Work button says "Show more pieces" with no total, because the list may be incomplete and Jack does not want an exact count implied there. No monospace, no uppercase tracked labels, no decorative reference codes; these were removed on purpose to make the page plainer. Each row has one quiet metadata line (type, topic, edition, access). The outlet is left off rows when it is the most common one (Environment Analyst). Jack wants it to stay simple and not look corporate; keep changes restrained.
 
 ## Preview
 
