@@ -13,17 +13,28 @@ This is a separate project from the art site (systemssystemssystems.faith). Do n
   - `threads`: running stories (`pfas`, `water-reform`, `data-centres`); a piece joins one with `thread: "<id>"`.
   - `reports`: reports and forums (13).
   - `earlier`: eight Ocki Sustainability pieces from early 2024, each with `full: "pieces/<file>.md"`.
-  - `articles`: 212 Environment Analyst pieces, one object per line. 118 have `roundup: true`.
+  - `articles`: 212 Environment Analyst pieces, one object per line. 118 have `roundup: true`. `free: true` marks pieces outside the paywall (see "Free to read" below).
 - `pieces/`: full texts fetched by "Read in full". Minimal markdown only: blank line between paragraphs, `## ` subheading, `- ` bullet, `[text](https://link)`. Nothing else is parsed.
 - `.nojekyll`: tells Pages to serve files as they are. Keep it.
 
 ## How the page behaves
 
-- Topic and type filter chips are built from the `beat` and `type` values in `articles`, ordered by count. There is no separate list of topics to maintain.
-- Roundups are hidden from "All work" until "Include weekly roundups" is ticked (94 pieces shown without, 212 with).
+- Topic chips and the type dropdown are built from the `beat` and `type` values in `articles`, ordered by count. There is no separate list of topics to maintain.
+- Roundups are hidden from Work until "Include weekly roundups" is ticked (94 pieces without, 212 with).
+- Long lists are cut short: Work shows the latest 8 until "Show all" is pressed or any filter is used; running stories show 4 (newest first), Reports 6, Earlier work 4, each with a "Show all" link. The limits are the constants `LATEST`, `THREAD_MAX`, `REPORT_MAX`, `EARLIER_MAX` at the top of the script.
+- "Free to read only" narrows Work to pieces with `free: true` and also pulls in the `earlier` pieces that have a `full` text (treated as free in code, sorted by their `when` month).
+- The masthead is sticky above 40rem wide.
 - "Selected" shows the first three pieces with `featured: true`.
 - "Read in full" fetches its file on first open, so it needs a server; it fails when `index.html` is opened from disk.
 - Adding `#add` to the address shows a form that builds an entry to paste into `articles.js`.
+
+## Free to read
+
+`free: true` was set in November 2026 by fetching every article `url` and reading the page's schema.org `"isAccessibleForFree"` value (paywalled pages also contain "to continue reading"). The `also` link was not used. Environment Analyst rate-limits: more than a few requests in quick succession returns 429, so check one at a time with a pause of a few seconds. Access can change over time, so re-check before relying on the flags.
+
+## Design
+
+One web font: Newsreader (serif) for headlines, section titles and the opening lines; the device's system sans for everything else. The opening is deliberately plain, set like the first lines of an article with no oversized slogan. The Work button says "Show more pieces" with no total, because the list may be incomplete and Jack does not want an exact count implied there. No monospace, no uppercase tracked labels, no decorative reference codes; these were removed on purpose to make the page plainer. Each row has one quiet metadata line (type, topic, edition, access). The outlet is left off rows when it is the most common one (Environment Analyst). Jack wants it to stay simple and not look corporate; keep changes restrained.
 
 ## Preview
 

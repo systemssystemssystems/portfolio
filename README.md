@@ -20,6 +20,7 @@ Or copy an existing line in `articles.js` and change the values. The comment at 
 ## Other changes, all in articles.js
 
 - **Selected:** add `featured: true` to up to three pieces.
+- **Free to read:** add `free: true` to a piece anyone can read without a subscription. It gets a "Free to read" label and appears when a reader ticks "Free to read only". Earlier pieces hosted in full count as free automatically.
 - **Summary for a paywalled piece:** add `summary: ["First paragraph.", "Second paragraph."]`.
 - **Running stories:** give a piece `thread: "pfas"` (or another id from the `threads` list).
 - **Reports and forums:** add a line to `reports`.
@@ -31,6 +32,10 @@ Or copy an existing line in `articles.js` and change the values. The comment at 
 2. Add `full: "pieces/your-file-name.md"` to its entry, and optionally `fullNote: "Originally published by ..."`.
 
 Only do this for work that is free to republish. Environment Analyst pieces behind the paywall get a summary instead.
+
+## How long lists are shown
+
+To keep the page short, Work shows the latest 8 pieces with a "Show more pieces" button, each running story shows its latest 4, Reports shows 6 and Earlier work shows 4. Picking a topic, a type, a search or "Free to read only" shows every match. The four numbers are at the top of the script in `index.html` (`LATEST`, `THREAD_MAX`, `REPORT_MAX`, `EARLIER_MAX`).
 
 ## Preview before pushing
 
