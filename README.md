@@ -44,4 +44,4 @@ From this folder run `python3 -m http.server` and open http://localhost:8000. Op
 
 ## Custom domain
 
-In the repository go to Settings, then Pages, and enter the domain under "Custom domain". GitHub adds a `CNAME` file for you. At the registrar, add the same four A records and `www` CNAME used for the art site.
+The site lives at jackmorgan.site, registered at Namecheap. The `CNAME` file in this folder tells GitHub which domain to serve; leave it in place.

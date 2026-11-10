@@ -50,7 +50,7 @@ Run from this folder, then open http://localhost:8000.
 
 Commit and push to `main`; Pages redeploys in a minute or two. Only host a piece in full if it is free to republish. Environment Analyst pieces behind the paywall get a `summary` instead.
 
-A custom domain is planned, set up the same way as the art site: four A records plus a `www` CNAME, HTTPS enforced. Do not add a `CNAME` file until Jack asks; GitHub creates it when the domain is entered in Settings, Pages.
+The site is served at jackmorgan.site (registered at Namecheap, November 2026; four A records to GitHub Pages plus a `www` CNAME to `systemssystemssystems.github.io`). The `CNAME` file in the repo root holds the domain; keep it. The old address, systemssystemssystems.faith/portfolio/, redirects here.
 
 ## Open items
 
