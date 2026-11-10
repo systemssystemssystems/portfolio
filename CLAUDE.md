@@ -10,7 +10,7 @@ This is a separate project from the art site (systemssystemssystems.faith). Do n
 - `articles.js`: all content, as one `window.SITE = { ... }` object. The comment at the top documents the article fields.
   - `profile`: name, role, statement, intro, bio, facts, contact.
   - `workNote`, `reportsNote`, `earlierNote`: notes shown under section headings.
-  - `threads`: running stories (`pfas`, `water-reform`, `data-centres`); a piece joins one with `thread: "<id>"`.
+  - `threads`: running stories (`pfas`, `water-reform`, `data-centres`, `consulting-market`, `reporting`, `brownfield`); a piece joins one with `thread: "<id>"`.
   - `reports`: reports and forums (13).
   - `earlier`: eight Ocki Sustainability pieces from early 2024, each with `full: "pieces/<file>.md"`.
   - `articles`: 212 Environment Analyst pieces, one object per line. 118 have `roundup: true`. `free: true` marks pieces outside the paywall (see "Free to read" below).
@@ -23,7 +23,8 @@ This is a separate project from the art site (systemssystemssystems.faith). Do n
 - Roundups are hidden from Work until "Include weekly roundups" is ticked (94 pieces without, 212 with).
 - Long lists are cut short: Work shows the latest 8 until "Show all" is pressed or any filter is used; running stories show 4 (newest first), Reports 6, Earlier work 4, each with a "Show all" link. The limits are the constants `LATEST`, `THREAD_MAX`, `REPORT_MAX`, `EARLIER_MAX` at the top of the script.
 - "Free to read only" narrows Work to pieces with `free: true` and also pulls in the `earlier` pieces that have a `full` text (treated as free in code, sorted by their `when` month).
-- The masthead is sticky above 40rem wide.
+- Running stories sit in one row that scrolls sideways, with arrow buttons in the section heading that appear only when the row overflows.
+- The masthead is sticky above 40rem wide and shows the name only (no role line).
 - "Selected" shows the first three pieces with `featured: true`.
 - "Read in full" fetches its file on first open, so it needs a server; it fails when `index.html` is opened from disk.
 - Adding `#add` to the address shows a form that builds an entry to paste into `articles.js`.
@@ -54,5 +55,7 @@ Known and unfinished. Jack will come back to these; do not fix them unprompted.
 
 - "Selected" shows three stand-in pieces (`featured: true`) with no summaries.
 - The topic (`beat`) grouping was guessed from headline keywords and has not been reviewed.
+- The `consulting-market`, `reporting` and `brownfield` running stories were filled by putting every non-roundup piece with the matching topic into them, and their titles and summaries are drafts. Jack has not reviewed either.
+- The About wording is to be reworked using phrasing from Jack's LinkedIn profile (linkedin.com/in/jackmorgan827). The profile sits behind a sign-in wall, so this needs Jack to sign in or paste the text.
 - In `pieces/dfe-sustainability-strategy.md`, "is listed here" has no link.
 - Months (`when`) and some headlines for the Ocki pieces in `earlier` are unconfirmed.

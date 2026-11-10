@@ -39,8 +39,7 @@ button,select{font:inherit;color:inherit}
 .mast{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 2rem;padding-block:1rem;border-bottom:1px solid var(--ink);background:var(--bg)}
 .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
 .brand svg{width:1.25rem;height:1.75rem;flex:none}
-.brand b{font-weight:600;font-size:1.0625rem;display:block;line-height:1.25}
-.brand span{display:block;font-size:.8125rem;color:var(--muted);line-height:1.25}
+.brand b{font-weight:600;font-size:1.0625rem}
 .mast nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;font-size:.9375rem}
 .mast nav a{text-decoration:none}
 @media (min-width:40.01rem){
@@ -101,9 +100,14 @@ section{padding-block:2.5rem;border-top:1px solid var(--rule)}
 .more:hover{background:var(--ink);color:var(--bg)}
 .more-link{margin-top:.9rem}
 
-/* running stories: a line with a node per piece, newest first */
-.threads{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2.5rem 2.5rem}
-.thread{min-width:0}
+/* running stories: a line with a node per piece, newest first. The stories sit in one
+   row that scrolls sideways; the next one peeks in at the edge to show there is more. */
+.threads{display:flex;align-items:flex-start;gap:2.5rem;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:1rem;scrollbar-width:thin}
+.thread{flex:0 0 clamp(14.5rem,28%,17rem);min-width:0;scroll-snap-align:start}
+.scroll-btns{display:flex;gap:.375rem}
+.scroll-btns button{width:2rem;height:2rem;border:1px solid var(--rule);background:transparent;border-radius:2px;cursor:pointer;line-height:1}
+.scroll-btns button:hover:not(:disabled){border-color:var(--ink)}
+.scroll-btns button:disabled{color:var(--rule);cursor:default}
 .thread h3{font-weight:600;font-size:1.125rem;line-height:1.3}
 .thread>p{font-size:.9375rem;color:var(--muted);margin-top:.35rem;margin-bottom:1.1rem}
 .line{border-left:1px solid var(--ink);margin-left:3px;display:grid;gap:.9rem;padding-block:.15rem}
@@ -166,7 +170,7 @@ footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:w
       <svg viewBox="0 0 40 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
         <path d="M20 2 13 54M20 2l7 52M6 14h28M4 25h32M9 36h22M18.5 14l4 11M21.5 14l-4 11M17 25l6.5 11M23 25l-6.5 11M15.5 36 26 54M24.5 36 14 54M6 14v3M34 14v3M4 25v3M36 25v3"/>
       </svg>
-      <div><b id="p-name"></b><span id="p-role"></span></div>
+      <b id="p-name"></b>
     </a>
     <nav aria-label="Sections">
       <a href="#work">Work</a><a href="#stories">Running stories</a><a href="#reports">Reports</a><a href="#earlier">Earlier</a><a href="#about">About</a><a href="#contact">Contact</a>
@@ -203,8 +207,11 @@ footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:w
     </section>
 
     <section aria-labelledby="h-stories" id="stories">
-      <div class="sec-head"><h2 id="h-stories">Running stories</h2><span class="meta">Subjects followed over time</span></div>
-      <div class="threads" id="threads"></div>
+      <div class="sec-head"><h2 id="h-stories">Running stories</h2>
+        <div class="scroll-btns" id="thread-btns" hidden><button type="button" id="thread-prev" aria-label="Previous stories">&larr;</button><button type="button" id="thread-next" aria-label="More stories">&rarr;</button></div>
+      </div>
+      <p class="sec-note">Subjects followed over time.</p>
+      <div class="threads" id="threads" tabindex="0" role="group" aria-label="Running stories, scroll sideways for more"></div>
     </section>
 
     <section aria-labelledby="h-reports" id="reports">
@@ -306,7 +313,7 @@ footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:w
   })();
 
   // profile
-  $('p-name').textContent = P.name; $('p-role').textContent = P.role;
+  $('p-name').textContent = P.name;
   $('p-statement').textContent = P.statement; $('p-intro').textContent = P.intro;
   P.bio.forEach(function(t){ $('bio').appendChild(h('p',null,t)); });
   P.facts.forEach(function(f){ $('facts').appendChild(h('div',null,h('dt',null,f[0]),h('dd',null,f[1]))); });
@@ -382,9 +389,9 @@ footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:w
       a.sample && h('span',{class:'hot'},'Sample'));
   }
   // long lists: show the first `limit` items and a "Show all" link for the rest
-  function capList(nodes, limit, after){
+  function capList(nodes, limit, after, text){
     if(nodes.length <= limit) return;
-    var open = false, label = 'Show all ' + nodes.length;
+    var open = false, label = text || 'Show all ' + nodes.length;
     function set(){ nodes.forEach(function(n,i){ if(i >= limit) n.hidden = !open; }); b.textContent = open ? 'Show fewer' : label; b.setAttribute('aria-expanded', String(open)); }
     var b = h('button',{class:'linkbtn more-link',type:'button',onclick:function(){ open = !open; set(); }});
     set(); after.parentNode.insertBefore(b, after.nextSibling);
@@ -499,6 +506,19 @@ footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:w
     $('threads').appendChild(h('div',{class:'thread'}, h('h3',null,t.title), h('p',null,t.summary), ol));
     capList(lis, THREAD_MAX, ol);
   });
+  // arrow buttons for the sideways row; shown only when it overflows
+  (function(){
+    var row = $('threads'), prev = $('thread-prev'), next = $('thread-next');
+    function sync(){
+      var max = row.scrollWidth - row.clientWidth;
+      $('thread-btns').hidden = max <= 4;
+      prev.disabled = row.scrollLeft <= 4; next.disabled = row.scrollLeft >= max - 4;
+    }
+    function step(dir){ var c = row.querySelector('.thread'); row.scrollBy({left: dir * (c ? c.offsetWidth + 40 : 300), behavior:'smooth'}); }
+    prev.addEventListener('click', function(){ step(-1); });
+    next.addEventListener('click', function(){ step(1); });
+    row.addEventListener('scroll', sync); window.addEventListener('resize', sync); sync();
+  })();
 
   // reports and forums
   var reps = (S.reports||[]).slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
@@ -522,7 +542,7 @@ footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:w
         tagRow(e, true), summaryNode(e), fullNode(e)));
   });
   earlyRows.forEach(function(n){ $('earlier-list').appendChild(n); });
-  capList(earlyRows, EARLIER_MAX, $('earlier-list'));
+  capList(earlyRows, EARLIER_MAX, $('earlier-list'), 'Show all');
 
   // add-a-piece helper: only shown when the address ends in #add
   function showAdder(){ var on = location.hash === '#add'; $('add').hidden = !on; if(on){ $('add').open = true; $('add').scrollIntoView(); } }
