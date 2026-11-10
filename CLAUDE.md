@@ -25,6 +25,8 @@ This is a separate project from the art site (systemssystemssystems.faith). Do n
 - "Free to read only" narrows Work to pieces with `free: true` and also pulls in the `earlier` pieces that have a `full` text (treated as free in code, sorted by their `when` month).
 - Running stories sit in one row that scrolls sideways, with arrow buttons in the section heading that appear only when the row overflows.
 - Dates show as month and year only (`fmt` in the script). There is no piece count in the Work heading and no status text while the list is cut to the latest 8; both were removed at Jack's request. `workNote` and `reportsNote` are empty strings, which hides those notes.
+- The region dropdown (UK, EU, US, Global) matches UK and Global on `edition` (BRN counts as UK) and EU and US on the optional `region` field.
+- Section titles (h2) are deliberately much larger and bolder than the sub-headings beneath them (1.625rem/700 against 1.0625rem/600), with an ink-coloured rule above each section; Jack found them hard to tell apart.
 - The masthead is sticky above 40rem wide and shows the name only (no role line).
 - "Selected" shows the first three pieces with `featured: true`.
 - "Read in full" fetches its file on first open, so it needs a server; it fails when `index.html` is opened from disk.
@@ -57,6 +59,8 @@ Known and unfinished. Jack will come back to these; do not fix them unprompted.
 - "Selected" shows three stand-in pieces (`featured: true`) with no summaries.
 - The topic (`beat`) grouping was guessed from headline keywords and has not been reviewed.
 - The `consulting-market`, `reporting` and `brownfield` running stories were filled by putting every non-roundup piece with the matching topic into them, and their titles and summaries are drafts. Jack has not reviewed either.
+- `region: "EU"` / `"US"` was assigned by matching keywords in headlines and standfirsts (EU, Europe, CSRD, Efrag, Omnibus; US, EPA, NEPA, America, Canada, federal, Trump) and has not been reviewed.
+- About is cut back to one paragraph and two facts (Education, Also) for now; Jack removed the rest pending a rewrite.
 - The About wording is to be reworked using phrasing from Jack's LinkedIn profile (linkedin.com/in/jackmorgan827). The profile sits behind a sign-in wall, so this needs Jack to sign in or paste the text.
 - In `pieces/dfe-sustainability-strategy.md`, "is listed here" has no link.
 - Months (`when`) and some headlines for the Ocki pieces in `earlier` are unconfirmed.
