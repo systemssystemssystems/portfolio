@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Jack Morgan is a journalist and analyst at Environment Analyst covering environmental policy, regulation and the consulting market, specialising in water and PFAS.">
+<meta property="og:title" content="Jack Morgan | Journalist and analyst">
+<meta property="og:description" content="Jack Morgan is a journalist and analyst at Environment Analyst covering environmental policy, regulation and the consulting market, specialising in water and PFAS.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%22-8%200%2056%2056%22%20fill%3D%22none%22%20stroke%3D%22%2314161a%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22square%22%3E%3Crect%20x%3D%22-8%22%20width%3D%2256%22%20height%3D%2256%22%20fill%3D%22%23f5f6f8%22%20stroke%3D%22none%22/%3E%3Cpath%20d%3D%22M20%202%2013%2054M20%202l7%2052M6%2014h28M4%2025h32M9%2036h22M18.5%2014l4%2011M21.5%2014l-4%2011M17%2025l6.5%2011M23%2025l-6.5%2011M15.5%2036%2026%2054M24.5%2036%2014%2054%22/%3E%3C/svg%3E">
+<title>Jack Morgan | Journalist and analyst</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&display=swap">
+<style>
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+/* Layout: one 60rem column. Mono "data plate" metadata sits in a left gutter beside serif
+   headlines; paywalled pieces open in place to a summary; running stories draw as a conductor line. */
+:root{
+  --bg:#f5f6f8; --surface:#ffffff; --ink:#14161a; --muted:#5a606b; --rule:#d3d7de; --accent:#2340c8;
+  --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0f1114;--surface:#171a1f;--ink:#e9ebee;--muted:#9aa1ac;--rule:#2b3038;--accent:#93a6ff;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0f1114;--surface:#171a1f;--ink:#e9ebee;--muted:#9aa1ac;--rule:#2b3038;--accent:#93a6ff;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:60rem;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));padding-block:1.5rem 3rem}
+a{color:inherit;text-decoration-color:var(--rule);text-underline-offset:.2em}
+a:hover{text-decoration-color:var(--accent);color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3,p,ul,ol,dl,dd{margin:0}
+ul,ol{padding:0;list-style:none}
+button{font:inherit;color:inherit}
+
+.mono{font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+/* masthead */
+.mast{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem 2rem;padding-bottom:1rem;border-bottom:1px solid var(--ink)}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.brand svg{width:1.25rem;height:1.75rem;flex:none}
+.brand b{font-weight:600;font-size:1.0625rem}
+.brand span{display:block;font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.mast nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;font-size:.9375rem}
+.mast nav a{text-decoration:none}
+
+/* intro */
+.intro{padding-block:3.5rem 3rem;display:grid;gap:1.25rem}
+.intro h1{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,5.4vw,3.25rem);line-height:1.12;letter-spacing:-.01em;max-width:18ch;text-wrap:balance}
+.intro p{max-width:34rem;font-size:1.0625rem;color:var(--muted)}
+
+/* sections */
+section{padding-block:2.25rem;border-top:1px solid var(--rule)}
+#featured-sec{border-top:0;padding-top:0}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.25rem 1rem;margin-bottom:1.25rem}
+.sec-head h2{font-size:.8125rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+
+/* featured */
+.featured{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.75rem 2rem}
+.feat{display:flex;flex-direction:column;gap:.6rem;min-width:0;padding-top:.9rem;border-top:2px solid var(--ink)}
+.feat h3{font-family:var(--serif);font-weight:500;font-size:1.3125rem;line-height:1.25;text-wrap:balance}
+.feat h3 a{text-decoration:none}
+.feat p{font-size:.9375rem;color:var(--muted)}
+
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;align-items:center;margin-bottom:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.375rem}
+.chip{border:1px solid var(--rule);background:transparent;border-radius:2px;padding:.2rem .6rem;font-size:.8125rem;cursor:pointer}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.search{flex:1 1 12rem;min-width:0;max-width:18rem;margin-left:auto;font:inherit;font-size:.875rem;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:2px;padding:.35rem .6rem}
+.status{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;font-size:.8125rem;color:var(--muted);min-height:1.5rem;margin-bottom:.25rem}
+.linkbtn{background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:.2em;color:var(--ink);font-size:inherit}
+.linkbtn:hover{color:var(--accent)}
+.notice{font-size:.8125rem;border:1px dashed var(--muted);padding:.5rem .75rem;margin-bottom:1.25rem;color:var(--muted)}
+
+/* list */
+.row{display:grid;grid-template-columns:8.5rem minmax(0,1fr);gap:.25rem 1.5rem;padding-block:1rem;border-top:1px solid var(--rule)}
+.row-meta{display:flex;flex-direction:column;gap:.15rem;font-family:var(--mono);font-size:.75rem;font-variant-numeric:tabular-nums}
+.row-meta .plate{color:var(--muted);font-size:.6875rem;letter-spacing:.04em}
+.row-title{font-family:var(--serif);font-size:1.125rem;line-height:1.3;font-weight:500;text-decoration:none}
+.row p{font-size:.9375rem;color:var(--muted);margin-top:.25rem;max-width:40rem}
+.tags{display:flex;flex-wrap:wrap;gap:.25rem .9rem;margin-top:.4rem;font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.tags .hot{color:var(--accent)}
+.empty{padding-block:1.5rem;color:var(--muted);border-top:1px solid var(--rule)}
+.year{font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;color:var(--muted);padding-top:1.75rem;padding-bottom:.5rem}
+.year:first-child{padding-top:.5rem}
+.sec-note{font-size:.875rem;color:var(--muted);max-width:40rem;margin-bottom:1rem}
+.check{display:flex;gap:.4rem;align-items:center;font-size:.8125rem;color:var(--muted);cursor:pointer}
+.check input{accent-color:var(--accent);margin:0}
+
+/* running stories: a conductor line with a node per piece */
+.threads{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:2.5rem 3rem}
+.thread{min-width:0}
+.thread h3{font-family:var(--serif);font-weight:500;font-size:1.3125rem;line-height:1.25}
+.thread>p{font-size:.9375rem;color:var(--muted);margin-top:.35rem;margin-bottom:1.1rem}
+.line{border-left:1px solid var(--ink);margin-left:3px;display:grid;gap:.9rem;padding-block:.15rem}
+.line li{position:relative;padding-left:1.25rem}
+.line li::before{content:"";position:absolute;left:-4px;top:.5rem;width:7px;height:7px;background:var(--bg);border:1px solid var(--ink)}
+.line li:last-child::before{background:var(--ink)}
+.line time{display:block;font-family:var(--mono);font-size:.6875rem;letter-spacing:.04em;color:var(--muted)}
+.line a,.line span.t{font-size:.9375rem;line-height:1.35}
+
+/* about + contact */
+.about{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:2rem 3rem}
+.about .bio{display:grid;gap:.9rem;max-width:36rem}
+.facts{display:grid;gap:.75rem;align-content:start}
+.facts dt{font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.facts dd{font-size:.9375rem}
+.contact{display:grid;gap:.6rem}
+.contact li{display:flex;flex-wrap:wrap;gap:.25rem 1rem;align-items:baseline}
+.contact .k{font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);width:5.5rem}
+.contact .v{user-select:all;overflow-wrap:anywhere}
+
+/* add-a-piece helper */
+#add{border-top:1px solid var(--rule);padding-block:1.25rem}
+#add>summary{cursor:pointer;font-size:.875rem;color:var(--muted)}
+.sum{margin-top:.5rem}
+.sum>summary{cursor:pointer;font-size:.8125rem;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:.2em;width:fit-content}
+.sum>summary:hover{color:var(--accent)}
+.sum>div{display:grid;gap:.7rem;margin-top:.7rem;padding-left:1rem;border-left:1px solid var(--ink);max-width:38rem}
+.sum p{font-size:.9375rem;color:var(--ink);margin:0}
+.sum.full>div{font-size:1rem;line-height:1.65;gap:1rem}
+.sum.full p,.sum.full li{font-size:1rem}
+.sum.full h4{margin:.75rem 0 0;font-family:var(--sans);font-size:.8125rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.sum.full ul{list-style:square;padding-left:1.1rem;display:grid;gap:.5rem}
+.sum.full .src{font-size:.8125rem;color:var(--muted)}
+.sum.full a{overflow-wrap:anywhere}
+.adder{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:.75rem 1rem;margin-top:1rem}
+.adder label{display:grid;gap:.2rem;font-size:.75rem;color:var(--muted);min-width:0}
+.adder .wide{grid-column:1/-1}
+.adder input,.adder select,.adder textarea{font:inherit;font-size:.875rem;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:2px;padding:.4rem .55rem;width:100%}
+.out{margin-top:1rem;overflow-x:auto;background:var(--surface);border:1px solid var(--rule);padding:.9rem 1rem;font-family:var(--mono);font-size:.8125rem;line-height:1.5;white-space:pre}
+.btn{margin-top:.75rem;border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:2px;padding:.4rem .9rem;font-size:.875rem;cursor:pointer}
+footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem}
+
+@media (max-width:40rem){
+  .intro{padding-block:2.25rem 2rem}
+  .row{grid-template-columns:1fr}
+  .row-meta{flex-direction:row;gap:.75rem;align-items:baseline}
+  .about{grid-template-columns:1fr}
+  .search{margin-left:0;max-width:none;flex-basis:100%}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <a class="brand" href="#top" id="top">
+      <svg viewBox="0 0 40 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
+        <path d="M20 2 13 54M20 2l7 52M6 14h28M4 25h32M9 36h22M18.5 14l4 11M21.5 14l-4 11M17 25l6.5 11M23 25l-6.5 11M15.5 36 26 54M24.5 36 14 54M6 14v3M34 14v3M4 25v3M36 25v3"/>
+      </svg>
+      <div><b id="p-name"></b><span id="p-role"></span></div>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a><a href="#stories">Running stories</a><a href="#reports">Reports</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="intro">
+      <h1 id="p-statement"></h1>
+      <p id="p-intro"></p>
+    </div>
+
+    <section aria-labelledby="h-feat" id="featured-sec">
+      <div class="sec-head"><h2 id="h-feat">Selected</h2></div>
+      <div class="featured" id="featured"></div>
+    </section>
+
+    <section aria-labelledby="h-work" id="work">
+      <div class="sec-head"><h2 id="h-work">All work</h2><span class="mono" id="work-count"></span></div>
+      <p class="sec-note" id="work-note" hidden></p>
+      <div class="notice" id="sample-notice" hidden>Sample entries are shown so you can see the layout. They are placeholders, not published pieces. Replace them in articles.js.</div>
+      <div class="filters">
+        <div class="chips" id="beat-chips" role="group" aria-label="Filter by topic"></div>
+        <div class="chips" id="type-chips" role="group" aria-label="Filter by type"></div>
+        <input class="search" id="search" type="search" placeholder="Search headlines" aria-label="Search headlines">
+      </div>
+      <div class="status" id="status" aria-live="polite"></div>
+      <label class="check" id="round-label" hidden><input type="checkbox" id="roundups"> Include weekly roundups (<span id="round-n"></span>)</label>
+      <ul id="work-list"></ul>
+    </section>
+
+    <section aria-labelledby="h-stories" id="stories">
+      <div class="sec-head"><h2 id="h-stories">Running stories</h2><span class="mono">Subjects followed over time</span></div>
+      <div class="threads" id="threads"></div>
+    </section>
+
+    <section aria-labelledby="h-reports" id="reports">
+      <div class="sec-head"><h2 id="h-reports">Reports and forums</h2><span class="mono">Beyond the byline</span></div>
+      <p class="sec-note" id="reports-note" hidden></p>
+      <ul id="report-list"></ul>
+    </section>
+
+    <section aria-labelledby="h-earlier" id="earlier">
+      <div class="sec-head"><h2 id="h-earlier">Earlier work</h2></div>
+      <p class="sec-note" id="earlier-note" hidden></p>
+      <ul id="earlier-list"></ul>
+    </section>
+
+    <section aria-labelledby="h-about" id="about">
+      <div class="sec-head"><h2 id="h-about">About</h2></div>
+      <div class="about"><div class="bio" id="bio"></div><dl class="facts" id="facts"></dl></div>
+    </section>
+
+    <section aria-labelledby="h-contact" id="contact">
+      <div class="sec-head"><h2 id="h-contact">Contact</h2></div>
+      <ul class="contact" id="contact-list"></ul>
+    </section>
+
+    <details id="add" hidden>
+      <summary>Add a piece (builds the entry to paste into articles.js)</summary>
+      <form class="adder" id="adder" autocomplete="off">
+        <label class="wide">Headline<input id="f-title" required></label>
+        <label>Outlet<input id="f-outlet" value="Environment Analyst"></label>
+        <label>Date<input id="f-date" type="date"></label>
+        <label>Topic<input id="f-beat" list="beat-list"><datalist id="beat-list"></datalist></label>
+        <label>Type<input id="f-type" value="News &amp; analysis" list="type-list"><datalist id="type-list"></datalist></label>
+        <label class="wide">Link<input id="f-url" type="url" placeholder="https://"></label>
+        <label class="wide">Standfirst (optional)<textarea id="f-stand" rows="2"></textarea></label>
+        <label class="wide">Summary for paywalled pieces (optional, blank line between paragraphs)<textarea id="f-sum" rows="4"></textarea></label>
+        <label>Running story<select id="f-thread"></select></label>
+        <label>Flags<select id="f-flags"><option value="">None</option><option value="featured">Featured</option><option value="paywalled">Subscriber only</option><option value="featured paywalled">Featured and subscriber only</option></select></label>
+      </form>
+      <div class="out" id="snippet" tabindex="0"></div>
+      <button class="btn" type="button" id="copy-snippet">Copy entry</button>
+    </details>
+  </main>
+
+  <footer class="mono"><span id="foot-name"></span><span id="foot-updated"></span></footer>
+</div>
+
+<script src="articles.js"></script>
+<script>
+(function(){
+  var S = window.SITE;
+  var $ = function(id){ return document.getElementById(id); };
+  if(!S){ $('work-list').textContent = 'articles.js did not load, so there is nothing to show yet.'; return; }
+
+  var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function h(tag, attrs){
+    var e = document.createElement(tag), k;
+    for(k in (attrs||{})){
+      var v = attrs[k];
+      if(v == null || v === false) continue;
+      if(k === 'class') e.className = v;
+      else if(k.slice(0,2) === 'on') e.addEventListener(k.slice(2), v);
+      else e.setAttribute(k, v === true ? '' : v);
+    }
+    for(var i=2;i<arguments.length;i++){
+      [].concat(arguments[i]).forEach(function(c){
+        if(c == null || c === false) return;
+        e.appendChild(c.nodeType ? c : document.createTextNode(String(c)));
+      });
+    }
+    return e;
+  }
+  function fmt(d){ var p = d.split('-'); return (+p[2]) + ' ' + MONTHS[p[1]-1] + ' ' + p[0]; }
+
+  var P = S.profile;
+  var arts = S.articles.slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
+  var initials = P.name.split(/\s+/).map(function(w){ return w[0]; }).join('').toUpperCase();
+  // data-plate identifier: initials, running number (oldest = 001), beat code
+  arts.forEach(function(a,i){
+    var n = String(arts.length - i); while(n.length < 3) n = '0' + n;
+    a.plate = initials + '·' + n + '·' + a.beat.replace(/[^A-Za-z]/g,'').slice(0,2).toUpperCase();
+  });
+
+  // profile
+  $('p-name').textContent = P.name; $('p-role').textContent = P.role;
+  $('p-statement').textContent = P.statement; $('p-intro').textContent = P.intro;
+  P.bio.forEach(function(t){ $('bio').appendChild(h('p',null,t)); });
+  P.facts.forEach(function(f){ $('facts').appendChild(h('div',null,h('dt',null,f[0]),h('dd',null,f[1]))); });
+  P.contact.forEach(function(c){
+    var val = c.href ? h('a',{class:'v',href:c.href,rel:'noopener'},c.value) : h('span',{class:'v'},c.value);
+    var li = h('li',null,h('span',{class:'k'},c.label),val);
+    if(c.copy){
+      var b = h('button',{class:'linkbtn',type:'button',onclick:function(){ copy(c.value, b, 'Copy'); }},'Copy');
+      li.appendChild(b);
+    }
+    $('contact-list').appendChild(li);
+  });
+  $('foot-name').textContent = '© ' + arts[0].date.slice(0,4) + ' ' + P.name;
+  $('foot-updated').textContent = 'Last piece added ' + fmt(arts[0].date);
+  if(arts.some(function(a){ return a.sample; })) $('sample-notice').hidden = false;
+
+  function copy(text, btn, label){
+    function done(){ btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = label; }, 1600); }
+    try{ navigator.clipboard.writeText(text).then(done, fallback); }catch(e){ fallback(); }
+    function fallback(){ btn.textContent = 'Select the text and copy'; }
+  }
+
+  function titleNode(a, cls){
+    return a.url ? h('a',{class:cls,href:a.url,rel:'noopener'},a.title) : h('span',{class:cls},a.title);
+  }
+  function summaryNode(a){
+    if(!a.summary) return null;
+    return h('details',{class:'sum'}, h('summary',null,'Read a summary'),
+      h('div',null,[].concat(a.summary).map(function(t){ return h('p',null,t); })));
+  }
+  // "Read in full": loads a text file from pieces/ the first time it is opened
+  function inline(text, host){
+    var re = /\[([^\]]+)\]\((https?:[^)\s]+)\)/g, last = 0, m;
+    while((m = re.exec(text))){
+      if(m.index > last) host.appendChild(document.createTextNode(text.slice(last, m.index)));
+      host.appendChild(h('a',{href:m[2],rel:'noopener'},m[1]));
+      last = re.lastIndex;
+    }
+    if(last < text.length) host.appendChild(document.createTextNode(text.slice(last)));
+    return host;
+  }
+  function renderText(src, host){
+    src.replace(/\r/g,'').split(/\n\s*\n/).forEach(function(block){
+      block = block.trim(); if(!block) return;
+      if(block.slice(0,3) === '## ') host.appendChild(h('h4',null,block.slice(3)));
+      else if(block.slice(0,2) === '- ') host.appendChild(h('ul',null,block.split('\n').map(function(l){ return inline(l.replace(/^- /,''), h('li')); })));
+      else host.appendChild(inline(block, h('p')));
+    });
+  }
+  function fullNode(a){
+    if(!a.full) return null;
+    var body = h('div',null), loaded = false;
+    var d = h('details',{class:'sum full'}, h('summary',null,'Read in full'), body);
+    d.addEventListener('toggle', function(){
+      if(!d.open || loaded) return; loaded = true;
+      body.appendChild(h('p',{class:'src'},'Loading\u2026'));
+      fetch(a.full).then(function(r){ if(!r.ok) throw 0; return r.text(); }).then(function(t){
+        body.textContent = '';
+        if(a.fullNote) body.appendChild(h('p',{class:'src'},a.fullNote));
+        renderText(t, body);
+      }).catch(function(){ loaded = false; body.textContent = ''; body.appendChild(h('p',{class:'src'},'The text could not be loaded. Close this and try again.')); });
+    });
+    return d;
+  }
+  function tagRow(a){
+    return h('div',{class:'tags'},
+      h('span',null,a.outlet + (a.edition ? ' ' + a.edition : '')), h('span',null,a.type), h('span',null,a.beat),
+      a.paywalled && h('span',null,'Subscriber'), a.sample && h('span',{class:'hot'},'Sample'));
+  }
+
+  // featured
+  var feats = arts.filter(function(a){ return a.featured; }).slice(0,3);
+  if(!feats.length) $('featured-sec').hidden = true;
+  feats.forEach(function(a){
+    $('featured').appendChild(h('article',{class:'feat'},
+      h('span',{class:'mono'},fmt(a.date) + ' · ' + a.plate),
+      h('h3',null,titleNode(a,'')),
+      a.standfirst && h('p',null,a.standfirst),
+      tagRow(a), summaryNode(a)));
+  });
+
+  // state + filters
+  var state = { beat:'All', type:'All', q:'', roundups:false };
+  function uniq(list, key){
+    var count = {}, out = [];
+    list.forEach(function(a){ if(!count[a[key]]){ count[a[key]] = 0; out.push(a[key]); } count[a[key]]++; });
+    return out.sort(function(x,y){ return count[y] - count[x]; });
+  }
+  var allBeats = uniq(arts,'beat'), allTypes = uniq(arts,'type');
+  var nRound = arts.filter(function(a){ return a.roundup; }).length;
+  var oldest = arts[arts.length-1].date.split('-');
+  $('work-count').textContent = arts.length + ' pieces since ' + MONTHS[oldest[1]-1] + ' ' + oldest[0];
+  if(S.workNote){ $('work-note').textContent = S.workNote; $('work-note').hidden = false; }
+  if(nRound){
+    $('round-label').hidden = false; $('round-n').textContent = nRound;
+    $('roundups').addEventListener('change', function(e){ state.roundups = e.target.checked; render(); });
+  }
+
+  function chips(host, values, key){
+    host.textContent = '';
+    ['All'].concat(values).forEach(function(v){
+      host.appendChild(h('button',{class:'chip',type:'button','aria-pressed':String(state[key]===v),
+        onclick:function(){ state[key] = v; render(); }}, v));
+    });
+  }
+
+  function render(){
+    var pool = arts.filter(function(a){ return state.roundups || !a.roundup; });
+    var beats = uniq(pool,'beat'), types = uniq(pool,'type');
+    if(beats.indexOf(state.beat) < 0) state.beat = 'All';
+    if(types.indexOf(state.type) < 0) state.type = 'All';
+    chips($('beat-chips'), beats, 'beat');
+    chips($('type-chips'), types, 'type');
+    var q = state.q.trim().toLowerCase();
+    var shown = pool.filter(function(a){
+      return (state.beat==='All' || a.beat===state.beat) &&
+             (state.type==='All' || a.type===state.type) &&
+             (!q || (a.title + ' ' + (a.standfirst||'') + ' ' + a.outlet).toLowerCase().indexOf(q) >= 0);
+    });
+    var st = $('status'); st.textContent = '';
+    st.appendChild(h('span',null, 'Showing ' + shown.length + ' of ' + pool.length));
+    if(state.beat!=='All' || state.type!=='All' || q) st.appendChild(h('button',{class:'linkbtn',type:'button',onclick:function(){
+      state.beat = 'All'; state.type = 'All'; state.q = ''; $('search').value=''; render(); }},'Clear filters'));
+    var list = $('work-list'); list.textContent = '';
+    if(!shown.length){ list.appendChild(h('li',{class:'empty'},'Nothing matches those filters.')); return; }
+    var yr = '';
+    shown.forEach(function(a){
+      var y = a.date.slice(0,4);
+      if(y !== yr){ yr = y; list.appendChild(h('li',{class:'year'},y)); }
+      list.appendChild(h('li',{class:'row'},
+        h('div',{class:'row-meta'}, h('time',{datetime:a.date},fmt(a.date)), h('span',{class:'plate'},a.plate)),
+        h('div',null, titleNode(a,'row-title'), a.standfirst && h('p',null,a.standfirst), tagRow(a), summaryNode(a), fullNode(a))));
+    });
+  }
+  $('search').addEventListener('input', function(e){ state.q = e.target.value; render(); });
+  render();
+
+  // running stories
+  (S.threads||[]).forEach(function(t){
+    var items = arts.filter(function(a){ return a.thread===t.id; }).reverse();
+    if(!items.length) return;
+    $('threads').appendChild(h('div',{class:'thread'},
+      h('h3',null,t.title), h('p',null,t.summary),
+      h('ol',{class:'line'}, items.map(function(a){
+        return h('li',null, h('time',{datetime:a.date},fmt(a.date) + ' · ' + a.type), titleNode(a,'t'));
+      }))));
+  });
+
+  // reports and forums
+  var reps = (S.reports||[]).slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
+  if(!reps.length) $('reports').hidden = true;
+  if(S.reportsNote){ $('reports-note').textContent = S.reportsNote; $('reports-note').hidden = false; }
+  reps.forEach(function(r){
+    $('report-list').appendChild(h('li',{class:'row'},
+      h('div',{class:'row-meta'}, h('span',null,r.when), h('span',{class:'plate'},r.format)),
+      h('div',null, titleNode(r,'row-title'), h('p',null,r.role))));
+  });
+
+  // earlier work
+  if(!(S.earlier||[]).length) $('earlier').hidden = true;
+  if(S.earlierNote){ $('earlier-note').textContent = S.earlierNote; $('earlier-note').hidden = false; }
+  (S.earlier||[]).forEach(function(e){
+    $('earlier-list').appendChild(h('li',{class:'row'},
+      h('div',{class:'row-meta'}, e.when && h('span',null,e.when), h('span',{class:'plate'},e.type || '')),
+      h('div',null, titleNode(e,'row-title'), e.standfirst && h('p',null,e.standfirst),
+        h('div',{class:'tags'}, h('span',null,e.outlet)), summaryNode(e), fullNode(e))));
+  });
+
+  // add-a-piece helper: only shown when the address ends in #add
+  function showAdder(){ var on = location.hash === '#add'; $('add').hidden = !on; if(on){ $('add').open = true; $('add').scrollIntoView(); } }
+  window.addEventListener('hashchange', showAdder); showAdder();
+
+  allBeats.forEach(function(b){ $('beat-list').appendChild(h('option',{value:b})); });
+  $('f-beat').value = allBeats[0] || '';
+  allTypes.filter(function(t){ return !/roundup/i.test(t); }).forEach(function(t){ $('type-list').appendChild(h('option',{value:t})); });
+  $('f-thread').appendChild(h('option',{value:''},'None'));
+  (S.threads||[]).forEach(function(t){ $('f-thread').appendChild(h('option',{value:t.id},t.title)); });
+  function snippet(){
+    var v = function(id){ return $(id).value.trim(); }, q = JSON.stringify, L = ['    {'];
+    L.push('      title: ' + q(v('f-title') || 'Headline') + ',');
+    L.push('      outlet: ' + q(v('f-outlet')) + ', date: ' + q(v('f-date') || 'YYYY-MM-DD') + ',');
+    if(v('f-url')) L.push('      url: ' + q(v('f-url')) + ',');
+    var line = '      beat: ' + q(v('f-beat')) + ', type: ' + q(v('f-type'));
+    v('f-flags').split(' ').forEach(function(f){ if(f) line += ', ' + f + ': true'; });
+    if(v('f-thread')) line += ', thread: ' + q(v('f-thread'));
+    L.push(line + ',');
+    if(v('f-stand')) L.push('      standfirst: ' + q(v('f-stand')) + ',');
+    var paras = $('f-sum').value.split(/\n\s*\n/).map(function(t){ return t.trim(); }).filter(Boolean);
+    if(paras.length){
+      L.push('      summary: [');
+      paras.forEach(function(t){ L.push('        ' + q(t) + ','); });
+      L.push('      ],');
+    }
+    L.push('    },');
+    $('snippet').textContent = L.join('\n');
+  }
+  $('adder').addEventListener('input', snippet);
+  $('adder').addEventListener('submit', function(e){ e.preventDefault(); });
+  $('copy-snippet').addEventListener('click', function(){ copy($('snippet').textContent, $('copy-snippet'), 'Copy entry'); });
+  snippet();
+})();
+</script>
+</body>
+</html>
