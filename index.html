@@ -77,7 +77,9 @@ section{padding-block:2.5rem;border-top:1px solid var(--rule)}
 .controls{display:flex;flex-wrap:wrap;gap:.6rem 1.25rem;align-items:center}
 .search,.select{font:inherit;font-size:.875rem;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:2px;padding:.35rem .6rem;min-width:0}
 .search{flex:1 1 11rem;max-width:16rem}
-.status{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;font-size:.8125rem;color:var(--muted);min-height:1.5rem}
+.status{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;font-size:.8125rem;color:var(--muted)}
+.status:empty{display:none}
+.status{margin-bottom:.25rem}
 .linkbtn{background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:.2em;color:var(--ink);font-size:.875rem}
 .linkbtn:hover{color:var(--accent)}
 .status .linkbtn{font-size:inherit}
@@ -173,7 +175,7 @@ footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:w
       <b id="p-name"></b>
     </a>
     <nav aria-label="Sections">
-      <a href="#work">Work</a><a href="#stories">Running stories</a><a href="#reports">Reports</a><a href="#earlier">Earlier</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <a href="#work">Work</a><a href="#stories">Subjects</a><a href="#reports">Reports</a><a href="#earlier">Earlier</a><a href="#about">About</a><a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -189,7 +191,7 @@ footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:w
     </section>
 
     <section aria-labelledby="h-work" id="work">
-      <div class="sec-head"><h2 id="h-work">Work</h2><span class="meta" id="work-count"></span></div>
+      <div class="sec-head"><h2 id="h-work">Work</h2></div>
       <p class="sec-note" id="work-note" hidden></p>
       <div class="notice" id="sample-notice" hidden>Sample entries are shown so you can see the layout. They are placeholders, not published pieces. Replace them in articles.js.</div>
       <div class="filters">
@@ -207,15 +209,14 @@ footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:w
     </section>
 
     <section aria-labelledby="h-stories" id="stories">
-      <div class="sec-head"><h2 id="h-stories">Running stories</h2>
+      <div class="sec-head"><h2 id="h-stories">Subjects followed over time</h2>
         <div class="scroll-btns" id="thread-btns" hidden><button type="button" id="thread-prev" aria-label="Previous stories">&larr;</button><button type="button" id="thread-next" aria-label="More stories">&rarr;</button></div>
       </div>
-      <p class="sec-note">Subjects followed over time.</p>
-      <div class="threads" id="threads" tabindex="0" role="group" aria-label="Running stories, scroll sideways for more"></div>
+      <div class="threads" id="threads" tabindex="0" role="group" aria-label="Subjects followed over time, scroll sideways for more"></div>
     </section>
 
     <section aria-labelledby="h-reports" id="reports">
-      <div class="sec-head"><h2 id="h-reports">Reports and forums</h2><span class="meta">Beyond the byline</span></div>
+      <div class="sec-head"><h2 id="h-reports">Reports</h2></div>
       <p class="sec-note" id="reports-note" hidden></p>
       <ul id="report-list"></ul>
     </section>
@@ -288,7 +289,8 @@ footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:w
     }
     return e;
   }
-  function fmt(d){ var p = d.split('-'); return (+p[2]) + ' ' + MONTHS[p[1]-1] + ' ' + p[0]; }
+  // dates show as month and year only
+  function fmt(d){ var p = d.split('-'); return MONTHS[p[1]-1] + ' ' + p[0]; }
 
   var P = S.profile;
   var arts = S.articles.slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
@@ -418,9 +420,6 @@ footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:w
   var allBeats = uniq(arts,'beat'), allTypes = uniq(arts,'type');
   var nRound = arts.filter(function(a){ return a.roundup; }).length;
   var anyFree = earlierFree.length || arts.some(function(a){ return a.free; });
-  var oldest = arts[arts.length-1].date.split('-');
-  // a round figure, not an exact count: the list may be missing pieces
-  $('work-count').textContent = (arts.length > 50 ? 'Over ' + Math.floor((arts.length - 1) / 50) * 50 : arts.length) + ' pieces since ' + MONTHS[oldest[1]-1] + ' ' + oldest[0];
   if(S.workNote){ $('work-note').textContent = S.workNote; $('work-note').hidden = false; }
   if(nRound){
     $('round-label').hidden = false; $('round-n').textContent = nRound;
@@ -468,7 +467,7 @@ footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:w
     var shown = cut ? matched.slice(0, LATEST) : matched;
 
     var st = $('status'); st.textContent = '';
-    st.appendChild(h('span',null, cut ? 'Latest ' + shown.length : 'Showing ' + shown.length + ' of ' + pool.length));
+    if(!cut) st.appendChild(h('span',null, 'Showing ' + shown.length + ' of ' + pool.length));
     if(state.beat!=='All' || state.type!=='All' || q) st.appendChild(h('button',{class:'linkbtn',type:'button',onclick:function(){
       state.beat = 'All'; state.type = 'All'; state.q = ''; $('search').value=''; render(); }},'Clear filters'));
 

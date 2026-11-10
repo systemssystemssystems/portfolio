@@ -32,9 +32,10 @@ window.SITE = {
     name: "Jack Morgan",
     role: "Journalist and analyst",
     statement: "Reporting on environmental policy, regulation and industry.",
-    intro: "I’m a journalist and analyst at Environment Analyst, covering UK and global environmental policy and the consulting market that serves it. Water and PFAS are my specialisms.",
+    intro: "I’m a journalist and analyst at Environment Analyst, covering UK and global environmental policy and the environmental and sustainability consulting market.",
     bio: [
-      "At Environment Analyst I specialise in water and PFAS, lead the brownfield coverage and look after the news output. My reporting also takes in the environmental consulting market, data centres, sustainability reporting and early careers in the sector.",
+      "I cover worldwide environmental policy, service area and client sector trends, and M&A activity. My speciality areas include the global water sector, PFAS, and UK brownfield sectors.",
+      "I also look after Environment Analyst’s news output, and my reporting takes in data centres, sustainability reporting and early careers in the sector.",
       "Alongside reporting, I convene and write up senior forums held under the Chatham House Rule, which means a lot of my work starts with conversations across government, NGOs, academia and industry."
     ],
     facts: [
@@ -49,7 +50,7 @@ window.SITE = {
     ]
   },
 
-  workNote: "Most of these pieces sit behind Environment Analyst's paywall. Selected pieces carry a summary.",
+  workNote: "",
 
   /* Running stories: a subject followed across several pieces. */
   threads: [
@@ -86,7 +87,7 @@ window.SITE = {
   ],
 
   /* Work that isn't a bylined article: reports, forums, event documents. */
-  reportsNote: "Forum and roundtable reports are written under the Chatham House Rule and are available to Environment Analyst members.",
+  reportsNote: "",
   reports: [
     { when: "Forthcoming", date: "2026-12", title: "UK E&S Consulting Market Assessment, 2026 edition", format: "Flagship report", role: "Leading the report, including the analysis and forecasting." },
     { when: "Apr 2026", date: "2026-04-30", title: "Early Careers Survey 2026", format: "Survey report", role: "Led the report.", url: "https://environment-analyst.com/uk/111536/purpose-pay-and-progression-survey-reveals-what-is-important-to-early-career-es-consultants" },
@@ -118,7 +119,7 @@ window.SITE = {
     { when: "Jan 2024", outlet: "Ocki Sustainability", type: "News", title: "Over 90% of consumers support sustainable choices, report finds", standfirst: "Study recommends how governments and businesses can support consumer choices.", full: "pieces/consumer-archetypes.md", fullNote: "Originally published by Ocki Sustainability in January 2024. Text from the author’s final edited copy." },
     { when: "Jan 2024", outlet: "Ocki Sustainability", type: "News", title: "What skills are needed to build a workforce for sustainability?", standfirst: "An IEEE Technology Center for Climate webinar on the skills organisations need for the green transition.", full: "pieces/workforce-skills.md", fullNote: "Originally published by Ocki Sustainability in January 2024. Text from the author’s final edited copy." }
   ],
-  earlierNote: "Written during a communications internship at Ocki Sustainability. The Ocki site is no longer online, so these are listed without links.",
+  earlierNote: "Written during a communications internship at Ocki Sustainability.",
 
   articles: [
     { title: "UK early careers survey returns", date: "2026-11-05", url: "https://environment-analyst.com/uk/111764/uk-early-careers-survey-returns", outlet: "Environment Analyst", edition: "UK", beat: "Careers & skills", type: "Early careers", free: true },

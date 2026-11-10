@@ -22,8 +22,8 @@ Or copy an existing line in `articles.js` and change the values. The comment at 
 - **Selected:** add `featured: true` to up to three pieces.
 - **Free to read:** add `free: true` to a piece anyone can read without a subscription. It gets a "Free to read" label and appears when a reader ticks "Free to read only". Earlier pieces hosted in full count as free automatically.
 - **Summary for a paywalled piece:** add `summary: ["First paragraph.", "Second paragraph."]`.
-- **Running stories:** give a piece `thread: "pfas"` (or another id from the `threads` list).
-- **Reports and forums:** add a line to `reports`.
+- **Subjects followed over time:** give a piece `thread: "pfas"` (or another id from the `threads` list).
+- **Reports:** add a line to `reports`.
 - **Bio, headline line, contact details:** the `profile` block at the top.
 
 ## Host a piece in full

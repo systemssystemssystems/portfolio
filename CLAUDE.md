@@ -10,7 +10,7 @@ This is a separate project from the art site (systemssystemssystems.faith). Do n
 - `articles.js`: all content, as one `window.SITE = { ... }` object. The comment at the top documents the article fields.
   - `profile`: name, role, statement, intro, bio, facts, contact.
   - `workNote`, `reportsNote`, `earlierNote`: notes shown under section headings.
-  - `threads`: running stories (`pfas`, `water-reform`, `data-centres`, `consulting-market`, `reporting`, `brownfield`); a piece joins one with `thread: "<id>"`.
+  - `threads`: the "Subjects followed over time" section, called running stories in the code (`pfas`, `water-reform`, `data-centres`, `consulting-market`, `reporting`, `brownfield`); a piece joins one with `thread: "<id>"`.
   - `reports`: reports and forums (13).
   - `earlier`: eight Ocki Sustainability pieces from early 2024, each with `full: "pieces/<file>.md"`.
   - `articles`: 212 Environment Analyst pieces, one object per line. 118 have `roundup: true`. `free: true` marks pieces outside the paywall (see "Free to read" below).
@@ -24,6 +24,7 @@ This is a separate project from the art site (systemssystemssystems.faith). Do n
 - Long lists are cut short: Work shows the latest 8 until "Show all" is pressed or any filter is used; running stories show 4 (newest first), Reports 6, Earlier work 4, each with a "Show all" link. The limits are the constants `LATEST`, `THREAD_MAX`, `REPORT_MAX`, `EARLIER_MAX` at the top of the script.
 - "Free to read only" narrows Work to pieces with `free: true` and also pulls in the `earlier` pieces that have a `full` text (treated as free in code, sorted by their `when` month).
 - Running stories sit in one row that scrolls sideways, with arrow buttons in the section heading that appear only when the row overflows.
+- Dates show as month and year only (`fmt` in the script). There is no piece count in the Work heading and no status text while the list is cut to the latest 8; both were removed at Jack's request. `workNote` and `reportsNote` are empty strings, which hides those notes.
 - The masthead is sticky above 40rem wide and shows the name only (no role line).
 - "Selected" shows the first three pieces with `featured: true`.
 - "Read in full" fetches its file on first open, so it needs a server; it fails when `index.html` is opened from disk.
