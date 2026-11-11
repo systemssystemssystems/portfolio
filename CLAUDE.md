@@ -27,7 +27,8 @@ This is a separate project from the art site (systemssystemssystems.faith). Do n
 - Dates show as month and year only (`fmt` in the script). There is no piece count in the Work heading and no status text while the list is cut to the latest 8; both were removed at Jack's request. `workNote` and `reportsNote` are empty strings, which hides those notes.
 - The region dropdown (UK, EU, US, Global) matches UK and Global on `edition` (BRN counts as UK) and EU and US on the optional `region` field.
 - Section titles (h2) are deliberately much larger and bolder than the sub-headings beneath them (1.625rem/700 against 1.0625rem/600), with an ink-coloured rule above each section; Jack found them hard to tell apart.
-- The masthead is sticky above 40rem wide and shows the name only (no role line).
+- Menu: above 40rem the whole masthead (name plus links) is sticky. On phones the name scrolls away and only the link row stays pinned, as one line that swipes sideways (`.mast{display:contents}` makes this work). The link for the section being read is bold and underlined (`aria-current`, set by the scroll handler near the end of the script). Built after feedback from mobile readers.
+- Each section opens with a 4px black bar and generous space below the previous one, also from that feedback.
 - "Selected" shows the first four pieces with `featured: true`, four across on desktop, two by two on tablets, stacked on phones.
 - "Read in full" fetches its file on first open, so it needs a server; it fails when `index.html` is opened from disk.
 - Adding `#add` to the address shows a form that builds an entry to paste into `articles.js`.
