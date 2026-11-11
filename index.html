@@ -258,7 +258,7 @@ footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:w
     </details>
   </main>
 
-  <footer class="meta"><span id="foot-name"></span><span id="foot-updated"></span></footer>
+  <footer class="meta"><span id="foot-updated"></span></footer>
 </div>
 
 <script src="articles.js"></script>
@@ -330,7 +330,6 @@ footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:w
     }
     $('contact-list').appendChild(li);
   });
-  $('foot-name').textContent = '© ' + arts[0].date.slice(0,4) + ' ' + P.name;
   $('foot-updated').textContent = 'Last piece added ' + fmt(arts[0].date);
   if(arts.some(function(a){ return a.sample; })) $('sample-notice').hidden = false;
 
@@ -541,7 +540,7 @@ footer{border-top:1px solid var(--ink);padding-top:1rem;display:flex;flex-wrap:w
       h('div',null, titleNode(r,'row-title'), h('p',null,r.role), r.format && h('div',{class:'tags'},h('span',null,r.format))));
   });
   repRows.forEach(function(n){ $('report-list').appendChild(n); });
-  capList(repRows, REPORT_MAX, $('report-list'));
+  capList(repRows, REPORT_MAX, $('report-list'), 'Show all');
 
   // earlier work
   if(!earlier.length) $('earlier').hidden = true;
