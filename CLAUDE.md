@@ -11,7 +11,7 @@ This is a separate project from the art site (systemssystemssystems.faith). Do n
   - `profile`: name, role, statement, intro, bio, facts, contact.
   - `workNote`, `reportsNote`, `earlierNote`: notes shown under section headings.
   - `threads`: the "Subjects followed over time" section, called running stories in the code (`pfas`, `water-reform`, `data-centres`, `consulting-market`, `reporting`, `brownfield`); a piece joins one with `thread: "<id>"`.
-  - `reports`: reports and forums (13).
+  - `reports`: 15 entries: market assessments, survey reports, insight reports and summits. Business Leaders' Forums and Leadership Network roundtables were removed at Jack's request; do not add them back. Roles follow Jack's outline of what he did ("led" or "contributed").
   - `earlier`: eight Ocki Sustainability pieces from early 2024, each with `full: "pieces/<file>.md"`.
   - `articles`: 212 Environment Analyst pieces, one object per line. 118 have `roundup: true`. `free: true` marks pieces outside the paywall (see "Free to read" below).
 - `pieces/`: full texts fetched by "Read in full". Minimal markdown only: blank line between paragraphs, `## ` subheading, `- ` bullet, `[text](https://link)`. Nothing else is parsed.
@@ -61,6 +61,7 @@ Known and unfinished. Jack will come back to these; do not fix them unprompted.
 - The `consulting-market`, `reporting` and `brownfield` running stories were filled by putting every non-roundup piece with the matching topic into them, and their titles and summaries are drafts. Jack has not reviewed either.
 - `region: "EU"` / `"US"` was assigned by matching keywords in headlines and standfirsts (EU, Europe, CSRD, Efrag, Omnibus; US, EPA, NEPA, America, Canada, federal, Trump) and has not been reviewed.
 - About is cut back to one paragraph and two facts (Education, Also) for now; Jack removed the rest pending a rewrite.
+- In `reports`, three dates are placeholders to be confirmed: UK Market Assessment Nov 2025 (day), UK Early Careers report 2025 (shown as "2025") and Future of Sustainability 2026 (shown as "2026"). "Europe in Focus" is Jack's name for the report; Environment Analyst's page calls it "Focus on Europe".
 - The About wording is to be reworked using phrasing from Jack's LinkedIn profile (linkedin.com/in/jackmorgan827). The profile sits behind a sign-in wall, so this needs Jack to sign in or paste the text.
 - In `pieces/dfe-sustainability-strategy.md`, "is listed here" has no link.
 - Months (`when`) and some headlines for the Ocki pieces in `earlier` are unconfirmed.
