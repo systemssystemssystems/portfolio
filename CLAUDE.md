@@ -28,7 +28,7 @@ This is a separate project from the art site (systemssystemssystems.faith). Do n
 - The region dropdown (UK, EU, US, Global) matches UK and Global on `edition` (BRN counts as UK) and EU and US on the optional `region` field.
 - Section titles (h2) are deliberately much larger and bolder than the sub-headings beneath them (1.625rem/700 against 1.0625rem/600), with an ink-coloured rule above each section; Jack found them hard to tell apart.
 - The masthead is sticky above 40rem wide and shows the name only (no role line).
-- "Selected" shows the first three pieces with `featured: true`.
+- "Selected" shows the first four pieces with `featured: true`, four across on desktop, two by two on tablets, stacked on phones.
 - "Read in full" fetches its file on first open, so it needs a server; it fails when `index.html` is opened from disk.
 - Adding `#add` to the address shows a form that builds an entry to paste into `articles.js`.
 
@@ -56,7 +56,7 @@ The site is served at jackmorgan.site (registered at Namecheap, November 2026; f
 
 Known and unfinished. Jack will come back to these; do not fix them unprompted.
 
-- "Selected" shows three stand-in pieces (`featured: true`) with no summaries.
+- "Selected" shows four pieces (three stand-ins plus the CSRD piece Jack chose), all (`featured: true`) with no summaries.
 - The topic (`beat`) grouping was guessed from headline keywords and has not been reviewed.
 - The `consulting-market`, `reporting` and `brownfield` running stories were filled by putting every non-roundup piece with the matching topic into them, and their titles and summaries are drafts. Jack has not reviewed either.
 - `region: "EU"` / `"US"` was assigned by matching keywords in headlines and standfirsts (EU, Europe, CSRD, Efrag, Omnibus; US, EPA, NEPA, America, Canada, federal, Trump) and has not been reviewed.

@@ -19,7 +19,7 @@
      type        News & analysis, Feature / interview, Event write-up...
      roundup     true for weekly roundups; these stay out of the main
                  list unless the reader ticks "Include weekly roundups"
-     featured    true to pin it to "Selected" at the top (first three)
+     featured    true to pin it to "Selected" at the top (first four)
      free        true if anyone can read it without a subscription; it
                  gets a "Free to read" label and shows when the reader
                  ticks "Free to read only"
@@ -309,7 +309,7 @@ window.SITE = {
     { title: "Water Act cracks down on lawbreakers", date: "2025-02-27", url: "https://environment-analyst.com/uk/110823/water-act-cracks-down-on-lawbreakers", outlet: "Environment Analyst", edition: "UK", beat: "Water", type: "News & analysis", thread: "water-reform" },
     { title: "Plugging the gap to meet the UK’s increasing demand for water", date: "2025-02-27", url: "https://environment-analyst.com/uk/110824/plugging-the-gap-to-meet-the-uks-increasing-demand-for-water", outlet: "Environment Analyst", edition: "UK", beat: "Water", type: "News & analysis" },
     { title: "Six water companies challenge Ofwat’s £6.7bn cut to investment", date: "2025-02-26", url: "https://environment-analyst.com/uk/110819/six-water-companies-challenge-ofwats-67bn-cut-to-investment", outlet: "Environment Analyst", edition: "UK", beat: "Water", type: "News & analysis", thread: "water-reform" },
-    { title: "Uncertainty clouds the future of CSRD services", date: "2025-02-20", url: "https://environment-analyst.com/uk/110815/uncertainty-clouds-the-future-of-csrd-services", also: "https://environment-analyst.com/global/110815/uncertainty-clouds-the-future-of-csrd-services", outlet: "Environment Analyst", edition: "UK & Global", beat: "Reporting & ESG", type: "News & analysis", free: true, thread: "reporting", region: "EU" },
+    { title: "Uncertainty clouds the future of CSRD services", date: "2025-02-20", url: "https://environment-analyst.com/uk/110815/uncertainty-clouds-the-future-of-csrd-services", also: "https://environment-analyst.com/global/110815/uncertainty-clouds-the-future-of-csrd-services", outlet: "Environment Analyst", edition: "UK & Global", beat: "Reporting & ESG", type: "News & analysis", free: true, thread: "reporting", region: "EU", featured: true },
     { title: "Business roundup: major deals made in Europe and US", date: "2025-02-19", url: "https://environment-analyst.com/global/110808/business-roundup-major-deals-made-in-europe-and-us", outlet: "Environment Analyst", edition: "Global", beat: "News output", type: "Business roundup", roundup: true, region: "EU, US" },
     { title: "Water companies commit to record £22bn investment in the environment", date: "2025-02-11", url: "https://environment-analyst.com/uk/110799/water-companies-commit-to-record-22bn-investment-in-the-environment", outlet: "Environment Analyst", edition: "UK", beat: "Water", type: "News & analysis", thread: "water-reform" },
     { title: "Contracts roundup: major rail and water projects", date: "2025-02-11", url: "https://environment-analyst.com/uk/110800/contracts-roundup-major-rail-and-water-projects", outlet: "Environment Analyst", edition: "UK", beat: "News output", type: "Contracts roundup", roundup: true },

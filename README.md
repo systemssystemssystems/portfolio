@@ -19,7 +19,7 @@ Or copy an existing line in `articles.js` and change the values. The comment at 
 
 ## Other changes, all in articles.js
 
-- **Selected:** add `featured: true` to up to three pieces.
+- **Selected:** add `featured: true` to up to four pieces.
 - **Free to read:** add `free: true` to a piece anyone can read without a subscription. It gets a "Free to read" label and appears when a reader ticks "Free to read only". Earlier pieces hosted in full count as free automatically.
 - **Summary for a paywalled piece:** add `summary: ["First paragraph.", "Second paragraph."]`.
 - **Region filter:** UK and Global come from `edition`. Add `region: "EU"` or `region: "US"` to a piece mainly about there.
